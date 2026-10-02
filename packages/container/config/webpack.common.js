@@ -1,5 +1,6 @@
 // Goal of the loader is to process some differnt files as we start to import them  into our project.
 // that ends with an extension of either mjs or just js, we want it to be processed by bable
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   module: {
@@ -20,4 +21,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
+  ],
 };
